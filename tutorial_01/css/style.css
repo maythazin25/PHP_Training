@@ -1,0 +1,22 @@
+body {
+  background-color: #faebd7;
+}
+
+div {
+  width: fit-content;
+  margin: 0 auto;
+  border: 10px solid #b56c0d;
+}
+
+td {
+  width: 30px;
+  height: 30px;
+}
+
+.SquareWhite {
+  background-color: #fff;
+}
+
+.SquareBlack {
+  background-color: #000;
+}

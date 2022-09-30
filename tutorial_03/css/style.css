@@ -1,0 +1,20 @@
+body {
+  background-color: #c2c0c0;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+h2,
+form,
+p {
+  text-align: center;
+}
+
+input {
+  margin-bottom: 30px;
+  padding: 10px 50px;
+  border: transparent;
+  border-radius: 2px;
+}
