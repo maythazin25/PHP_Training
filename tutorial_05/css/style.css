@@ -1,0 +1,16 @@
+body {
+  background-color: #f0ffff;
+}
+
+h2 {
+  color: #668888;
+}
+
+tr,
+td {
+  border: 1px solid #668888;
+}
+
+td {
+  padding: 10px;
+}
