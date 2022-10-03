@@ -23,9 +23,15 @@
     $img_name = $_FILES['img_upload']['name'];
     $tmp_img_name = $_FILES['img_upload']['tmp_name'];
     $folder = 'Photo/';
-    move_uploaded_file($tmp_img_name, $Photo . $img_name);
-  } else {
-    echo "image not found!";
+    $file_type = $_FILES['imag_upload']['type'];
+    $file_ext = explode('.', $img_name);
+    $img_ext = strtolower(end($file_ext));
+    $allowed = array('jpg', 'png');
+    if (in_array($img_ext, $allowed)) {
+      move_uploaded_file($tmp_img_name, $folder . $img_name);
+    } else {
+      echo "Image Type is Invalid!";
+    }
   }
   ?>
 </body>
