@@ -12,8 +12,11 @@
 
 <body>
   <form action='' method="POST" enctype="multipart/form-data">
-    <label>Upload Image:</label>
+    <h2>Upload Image</h2>
+    <label>Folder Name:</label>
+    <input type="text" name="create_foler" placeholder="Enter Folder Name">
     <br /><br />
+    <label>Upload Image:</label>
     <input type="file" name="img_upload">
     <br /><br />
     <input type="submit" name="submit" value="Submit">
