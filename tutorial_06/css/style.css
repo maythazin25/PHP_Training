@@ -1,6 +1,9 @@
 body{
-  /*background-color: #ffebcd;*/
-  background-color: black;
-  text-align: center;
+  background-color: #ffebcd;
+  /*background-color: #000000;*/
+}
+
+form{
+  margin: auto;
 }
 
