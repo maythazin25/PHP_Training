@@ -1,5 +1,5 @@
 <?php
-  require_once "db_connect.php";
+  require "db_connect.php";
 ?>
 
 
@@ -32,38 +32,37 @@
 
             
 <?php
-  $sql = "select * from users";
-    $result = ($mysqli->query($sql));
-
-    if (mysqli_num_rows($result) > 0) {
-        while($row = mysqli_fetch_assoc($result)) {
-            $id = $row['id'];
-            $name = $row['name'];
-            $email = $row['email'];
-            $phone = $row['phone'];
-            $address = $row['address'];
-            $created_at = $row['created_at'];
-            $updated_at = $row['updated_at'];
-
-        
-            echo '<tr>
-                <td>'.$id.'</td>
-                <td>'.$name.'</td>
-                <td>'.$email.'</td>
-                <td>'.$phone.'</td>               
-                <td>'.$address.'</td>
-                <td>'.$created_at.'</td>
-                <td>'.$updated_at.'</td>
-                <td>
-                <button class= "cmn-btn edit"><a href= "user-edit.php?updateid='.$id.'">Edit</a></button>
-                <button class= "cmn-btn delete"><a href= "user-delete.php?deleteid='.$id.'">Delete</a></button>
-                </td>
-            </tr>
-            ';
-        }; 
- }
+ $sql = "SELECT * FROM users;";
+ $result = mysqli_query($conn, $sql);
 
 
+ if (($result) > 0) {
+     while($row = mysqli_fetch_assoc($result)) {
+         $id = $row['id'];
+         $name = $row['name'];
+         $email = $row['email'];
+         $phone = $row['phone'];
+         $address = $row['address'];
+         $created_at = $row['created_at'];
+         $updated_at = $row['updated_at'];
+
+     
+         echo '<tr>
+             <td>'.$id.'</td>
+             <td>'.$name.'</td>
+             <td>'.$email.'</td>
+             <td>'.$phone.'</td>               
+             <td>'.$address.'</td>
+             <td>'.$created_at.'</td>
+             <td>'.$updated_at.'</td>
+             <td>
+             <a class= "btn btn-primary btn-sm href= "edit.php?id='.$id.'">Edit</a></button>
+             <a class= "btn btn-danger btn-sm href= "delete.php?id='.$id.'">Delete</a></button>
+             </td>
+         </tr>
+         ';
+     }; 
+}
  ?>
 </table>
 </div>
