@@ -21,4 +21,3 @@ $sql = "CREATE TABLE `login_system`.`login` (
     `status` int(11) NOT NULL
   );";
 $conn->query($sql);
-?>

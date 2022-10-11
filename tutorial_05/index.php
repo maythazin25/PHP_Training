@@ -15,18 +15,14 @@
     echo "<h2>Reading Text File</h2><br />";
     $filename = 'AllFile/text.txt';
     $f = fopen($filename, 'r');
-
     if ($f) {
         $contents = fread($f, filesize($filename));
         fclose($f);
         echo nl2br($contents);
     }
-
     echo "<br /><h2>Reading csv File</h2><br />";
     $file = fopen('AllFile/text.csv', 'r');
-
     if ($file !== FALSE) {
-
         echo "<table>\n";
         while (($data = fgetcsv($file, 100, ',')) !== FALSE) {
             echo "<tr>";
@@ -36,11 +32,8 @@
             echo "</tr>\n";
         }
         echo "</table>\n";
-
         fclose($file);
     }
-
-
     ?>
 </body>
 
