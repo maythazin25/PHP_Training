@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Contracts\Services\TaskServiceInterface;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 
 /**
@@ -47,13 +48,22 @@ class TaskController extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
+
   public function store(Request $request)
   {
+    // validation for request values
+    $validator = Validator::make($request->all(), [
+      'name' => 'required|max:255',
+    ]);
+
+    if ($validator->fails()) {
+      return redirect('/')
+        ->withInput()
+        ->withErrors($validator);
+    }
     $tasks = $this->taskInterface->store($request);
     return $tasks;
   }
-
-
 
   /**
    * Remove the specified resource from storage.
